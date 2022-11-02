@@ -9,7 +9,7 @@ Useful when log file is not at the default storage path
 ## Installation
 
 ```
-$ composer require laravel-admin-ext/log-viewer -vvv
+$ composer require fadlisaad/laravel-log-viewer -vvv
 
 $ php artisan admin:import log-viewer
 
