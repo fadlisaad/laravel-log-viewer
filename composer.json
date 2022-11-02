@@ -27,7 +27,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Encore\\Admin\\CustomLogViewer\\CustomLogViewerServiceProvider"
+                "Encore\\Admin\\LaravelLogViewer\\CustomLogViewerServiceProvider"
             ]
         }
     }
