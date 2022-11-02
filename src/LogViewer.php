@@ -1,13 +1,13 @@
 <?php
 
-namespace Encore\Admin\LogViewer;
+namespace Encore\Admin\CustomLogViewer;
 
 use Encore\Admin\Extension;
 
 /**
  * Class LogViewer.
  */
-class LogViewer extends Extension
+class CustomLogViewer extends Extension
 {
     use BootExtension;
 
@@ -72,7 +72,7 @@ class LogViewer extends Extension
     public function getFilePath()
     {
         if (!$this->filePath) {
-            $path = sprintf(storage_path('logs/%s'), $this->file);
+            $path = sprintf(config('custom_log_path').'storage/logs/%s', $this->file);
 
             if (!file_exists($path)) {
                 throw new \Exception('log not exists!');
@@ -103,7 +103,7 @@ class LogViewer extends Extension
      */
     public function getLogFiles($count = 20)
     {
-        $files = glob(storage_path('logs/*'));
+        $files = glob(config('custom_log_path').'logs/*');
         $files = array_combine($files, array_map('filemtime', $files));
         arsort($files);
 
