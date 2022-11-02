@@ -21,13 +21,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Encore\\Admin\\LogViewer\\": "src/"
+            "Encore\\Admin\\CustomLogViewer\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Encore\\Admin\\LaravelLogViewer\\CustomLogViewerServiceProvider"
+                "Encore\\Admin\\CustomLogViewer\\CustomLogViewerServiceProvider"
             ]
         }
     }
