@@ -1,10 +1,6 @@
-Log viewer for laravel-admin
+Custom log viewer for laravel-admin. 
 ============================
-
-[![StyleCI](https://styleci.io/repos/98625172/shield?branch=master)](https://styleci.io/repos/98625172)
-[![Packagist](https://img.shields.io/packagist/l/laravel-admin-ext/log-viewer.svg?maxAge=2592000)](https://packagist.org/packages/laravel-admin-ext/log-viewer)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel-admin-ext/log-viewer.svg?style=flat-square)](https://packagist.org/packages/laravel-admin-ext/log-viewer)
-[![Pull request welcome](https://img.shields.io/badge/pr-welcome-green.svg?style=flat-square)]()
+Useful when log file is not at the default storage path
 
 ## Screenshot
 
@@ -16,7 +12,9 @@ Log viewer for laravel-admin
 $ composer require laravel-admin-ext/log-viewer -vvv
 
 $ php artisan admin:import log-viewer
+
 ```
+Add new config `custom_log_path` with path to your custom log path.
 
 Open `http://localhost/admin/logs`.
 
