@@ -1,14 +1,14 @@
 {
-    "name": "laravel-admin-ext/log-viewer",
-    "description": "Log viewer for laravel",
+    "name": "fadlisaad/laravel-log-viewer",
+    "description": "Custom log viewer for laravel",
     "type": "library",
     "keywords": ["laravel-admin", "log", "viewer"],
-    "homepage": "https://github.com/laravel-admin-extensions/log-viewer",
+    "homepage": "https://github.com/fadlisaad/laravel-log-viewer",
     "license": "MIT",
     "authors": [
         {
-            "name": "z-song",
-            "email": "zosong@126.com"
+            "name": "Fadli Saad",
+            "email": "fadlisaad@gmail.com"
         }
     ],
     "require": {
