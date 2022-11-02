@@ -25,9 +25,9 @@ trait BootExtension
     {
         parent::routes(function ($router) {
             /* @var \Illuminate\Routing\Router $router */
-            $router->get('custom-logs', 'Encore\Admin\CustomLogViewer\LogController@index')->name('custom-log-viewer-index');
-            $router->get('custom-logs/{file}', 'Encore\Admin\CustomLogViewer\LogController@index')->name('custom-log-viewer-file');
-            $router->get('custom-logs/{file}/tail', 'Encore\Admin\CustomLogViewer\LogController@tail')->name('custom-log-viewer-tail');
+            $router->get('custom-logs', 'Encore\Admin\CustomLogViewer\CustomLogController@index')->name('custom-log-viewer-index');
+            $router->get('custom-logs/{file}', 'Encore\Admin\CustomLogViewer\CustomLogController@index')->name('custom-log-viewer-file');
+            $router->get('custom-logs/{file}/tail', 'Encore\Admin\CustomLogViewer\CustomLogController@tail')->name('custom-log-viewer-tail');
         });
     }
 
