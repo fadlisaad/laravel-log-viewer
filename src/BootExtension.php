@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\LogViewer;
+namespace Encore\Admin\CustomLogViewer;
 
 use Encore\Admin\Admin;
 
@@ -13,7 +13,7 @@ trait BootExtension
     {
         static::registerRoutes();
 
-        Admin::extend('log-viewer', __CLASS__);
+        Admin::extend('custom-log-viewer', __CLASS__);
     }
 
     /**
@@ -25,9 +25,9 @@ trait BootExtension
     {
         parent::routes(function ($router) {
             /* @var \Illuminate\Routing\Router $router */
-            $router->get('logs', 'Encore\Admin\LogViewer\LogController@index')->name('log-viewer-index');
-            $router->get('logs/{file}', 'Encore\Admin\LogViewer\LogController@index')->name('log-viewer-file');
-            $router->get('logs/{file}/tail', 'Encore\Admin\LogViewer\LogController@tail')->name('log-viewer-tail');
+            $router->get('custom-logs', 'Encore\Admin\CustomLogViewer\LogController@index')->name('custom-log-viewer-index');
+            $router->get('custom-logs/{file}', 'Encore\Admin\CustomLogViewer\LogController@index')->name('custom-log-viewer-file');
+            $router->get('custom-logs/{file}/tail', 'Encore\Admin\CustomLogViewer\LogController@tail')->name('custom-log-viewer-tail');
         });
     }
 
@@ -36,8 +36,8 @@ trait BootExtension
      */
     public static function import()
     {
-        parent::createMenu('Log viewer', 'logs', 'fa-database');
+        parent::createMenu('Custom Log viewer', 'custom-logs', 'fa-database');
 
-        parent::createPermission('Logs', 'ext.log-viewer', 'logs*');
+        parent::createPermission('Custom Logs', 'ext.log-viewer', 'logs*');
     }
 }
