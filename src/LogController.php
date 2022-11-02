@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\LogViewer;
+namespace Encore\Admin\CustomLogViewer;
 
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Content;
@@ -12,20 +12,20 @@ class LogController extends Controller
     public function index(Request $request, $file = null)
     {
         if ($file === null) {
-            $file = (new LogViewer())->getLastModifiedLog();
+            $file = (new CustomLogViewer())->getLastModifiedLog();
         }
 
         return Admin::content(function (Content $content) use ($file, $request) {
             $offset = $request->get('offset');
 
-            $viewer = new LogViewer($file);
+            $viewer = new CustomLogViewer($file);
 
             $content->body(view('laravel-admin-logs::logs', [
                 'logs'      => $viewer->fetch($offset),
                 'logFiles'  => $viewer->getLogFiles(),
                 'fileName'  => $viewer->file,
                 'end'       => $viewer->getFilesize(),
-                'tailPath'  => route('log-viewer-tail', ['file' => $viewer->file]),
+                'tailPath'  => route('custom-log-viewer-tail', ['file' => $viewer->file]),
                 'prevUrl'   => $viewer->getPrevPageUrl(),
                 'nextUrl'   => $viewer->getNextPageUrl(),
                 'filePath'  => $viewer->getFilePath(),
@@ -40,7 +40,7 @@ class LogController extends Controller
     {
         $offset = $request->get('offset');
 
-        $viewer = new LogViewer($file);
+        $viewer = new CustomLogViewer($file);
 
         list($pos, $logs) = $viewer->tail($offset);
 
